@@ -1,17 +1,13 @@
 ---
 # Display name
-title: 吳健雄
+title: Jeroen D. Mulder
 
 # Name pronunciation (optional)
-name_pronunciation: Chien Shiung Wu
+name_pronunciation: ''
 
 # Full name (for SEO)
-first_name: Shiung Wu
-last_name: Chien
-
-# Status emoji
-status:
-  icon: ☕️
+first_name: Jeroen
+last_name: Mulder
 
 # Is this the primary user of the site?
 superuser: true
