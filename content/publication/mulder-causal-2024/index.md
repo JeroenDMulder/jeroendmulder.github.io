@@ -12,4 +12,14 @@ publication_types:
 - article-journal
 publication: '*Structural Equation Modeling: A Multidisciplinary Journal*'
 doi: 10.1080/10705511.2024.2316586
+featured: true
+tags:
+- Inverse Probability Weighting
+- Marginal Structural Model
+- Observational Data
+- Structural Equation Modeling
+- Time-Varying Effect
+links:
+- name: Online Supplementary Materials
+  url: https://jeroendmulder.github.io/ SEM-and-MSM
 ---
