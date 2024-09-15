@@ -16,126 +16,80 @@ superuser: true
 highlight_name: true
 
 # Role/position/tagline
-role: Chief Scientist
+role: Postdoctoral researcher
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
-  - name: OpenAI
-    url: https://openai.com/
+  - name: Universiteit Utrecht
+    url: https://www.uu.nl/staff/JDMulder
+  - name: Humboldt-Universität
 
 # Social network links
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
 profiles:
   - icon: at-symbol
-    url: 'mailto:your-email@example.com'
+    url: 'mailto:j.d.mulder@uu.nl'
     label: E-mail Me
-  - icon: brands/x
-    url: https://twitter.com/GetResearchDev
-  - icon: brands/instagram
-    url: https://www.instagram.com/
   - icon: brands/github
-    url: https://github.com/gcushen
+    url: https://github.com/jeroendmulder
   - icon: brands/linkedin
-    url: https://www.linkedin.com/
+    url: https://www.linkedin.com/in/jeroen-mulder-686ab7129/
   - icon: academicons/google-scholar
-    url: https://scholar.google.com/
+    url: https://scholar.google.com/citations?user=7ffiRvYAAAAJ&hl=en
   - icon: academicons/orcid
-    url: https://orcid.org/
+    url: https://orcid.org/0000-0002-5553-0856
 
 interests:
-  - Artificial Intelligence
-  - Computational Linguistics
-  - Information Retrieval
+  - Causal Inference
+  - Longitudinal Data Analysis
+  - Structural Equation Modeling
 
 education:
-  - area: PhD Artificial Intelligence
-    institution: Stanford University
-    date_start: 2016-01-01
-    date_end: 2020-12-31
+  - area: PhD Methods and Statistics
+    institution: Universiteit Utrecht
+    date_start: 2019-05-01
+    date_end: 2023-10-31
     summary: |
-      Thesis on _Why LLMs are awesome_. Supervised by [Prof Joe Smith](https://example.com). Presented papers at 5 IEEE conferences with the contributions being published in 2 Springer journals.
+      Thesis on _structural equation modeling for descriptive, predictive, and causal research_. Supervised by [Prof Dr. Ellen L. Hamaker](https://scholar.google.com/citations?user=DA9HlugAAAAJ&hl=en&oi=ao) and [Dr. Satoshi Usami](https://scholar.google.com/citations?user=9fE_RREAAAAJ&hl=en&oi=ao).
     button:
       text: 'Read Thesis'
-      url: 'https://example.com'
-  - area: MEng Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    date_start: 2016-01-01
-    date_end: 2020-12-31
+      url: 'https://doi.org/10.33540/2253'
+  - area: MSc Methodology and Statistics for the Behavioural, Biomedical, and Social Sciences
+    institution: Universiteit Utrecht
+    date_start: 2016-09-01
+    date_end: 2018-08-31
     summary: |
-      GPA: 3.8/4.0
+      Courses included:
+      - Bayesian Statistics
+      - Structural Equation  Modeling and Multilevel Modeling
+      - Econometric Methods
+  - area: BSc Communication Science
+    institution: Universiteit van Twente
+    date_start: 2013-09-01
+    date_end: 2016-08-31
 
-      Courses included:
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - area: BSc Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    date_start: 2016-01-01
-    date_end: 2020-12-31
-    summary: |
-      GPA: 3.4/4.0
-      
-      Courses included:
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
 work:
-  - position: Director of Cloud Infrastructure
-    company_name: GenCoin
+  - position: Postdoctoral researcher
+    company_name: Universiteit Utrecht
     company_url: ''
     company_logo: ''
-    date_start: 2021-01-01
+    date_start: 2023-11-01
     date_end: ''
     summary: |2-
       Responsibilities include:
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - position: Backend Software Engineer
-    company_name: X
+      - Statistical research concerning causal inference in the social sciences
+      - Teaching at the undergraduate, graduate, and postgraduate level
+      - Coordinating and organizing education- and research-related activities
+  - position: Radio DJ
+    company_name: NPO Radio 2 (BNNVARA)
     company_url: ''
     company_logo: ''
-    date_start: 2016-01-01
-    date_end: 2020-12-31
+    date_start: 2020-04-01
+    date_end: 2021-12-31
     summary: |
       Responsibilities include:
-      - Migrated infrastructure to a new data center
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-
-# Skills
-# Add your own SVG icons to `assets/media/icons/`
-skills:
-  - name: Technical Skills
-    items:
-      - name: Python
-        description: ''
-        percent: 80
-        icon: code-bracket
-      - name: Data Science
-        description: ''
-        percent: 100
-        icon: chart-bar
-      - name: SQL
-        description: ''
-        percent: 40
-        icon: circle-stack
-  - name: Hobbies
-    color: '#eeac02'
-    color_border: '#f0bf23'
-    items:
-      - name: Hiking
-        description: ''
-        percent: 60
-        icon: person-simple-walk
-      - name: Cats
-        description: ''
-        percent: 100
-        icon: cat
-      - name: Photography
-        description: ''
-        percent: 80
-        icon: camera
+      - Preparation and producing various radio shows
+      - Presenting the radio program WILDGROEI
 
 languages:
   - name: English
@@ -179,4 +133,4 @@ awards:
 
 ## About Me
 
-Chien Shiung Wu is a professor of artificial intelligence at the Stanford AI Lab. Her research interests include distributed robotics, mobile computing and programmable matter. She leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
+Hi there! My name is Jeroen, and I am a statistical researcher specialized in longitudinal data analysis methods for causal inference. In my research, I evaluate, compare, and develop analysis methods that are used in a variety of disciplines, ranging from psychology and social sciences, to epidemiology and biostatistics. I currently work as a postdoctoral researcher at Utrecht University (the Netherlands) and as a lecturer at Humboldt-Universität (Berlin, Germany). 
