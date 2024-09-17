@@ -93,7 +93,7 @@ work:
     company_name: Universiteit Utrecht
     company_logo: 'UU.png'
     date_start: 2018-08-01
-    date_end: 2019-04-31
+    date_end: 2019-04-30
     summary: |
       Responsibilities included:
       - Teaching statistical courses at bachelor, master, and postgraduate level.
