@@ -1,7 +1,7 @@
 ---
 title: Causal Inference in Cross-Lagged Panel Research
 
-event: Invited Talk | Universität Leipzig
+event: Invited Talks
 event_url: ''
 
 location: Universität Leipzig
@@ -9,7 +9,7 @@ address:
   city: Leipzig
   country: Germany
 
-summary: An invited talk about issues and solutions in causal inference in cross-lagged panel research.
+summary: An invited talk about issues and solutions in causal inference in cross-lagged panel research at the Universität Leipzig.
 abstract: 'Cross-lagged panel modeling approaches are well-established in psychological research for investigating of causal relations between variables over time using panel data. However, critics of this practice in the causal inference literature state that SEM models depend heavily on parametric assumptions; since these are likely to be violated---at least to some degree---in practice, they argue that SEM models are prone to bias when used for causal inference. Obviously, this claim should raise concerns, but disciplinary differences hinders SEM users to appreciate the arguments, concerns, and alternative modeling approaches that are put forward by critics in fields like epidemiology and biostatistics. To address this issue, this presentation introduces the phases of the potential outcomes approach to causal inference, discusses the assumptions that are made throughout the causal inference process, and discusses reasons why cross-lagged panel modeling approaches might be best avoided when the goal is investigate a causal research question. '
 
 # Talk start and end times.
@@ -20,6 +20,10 @@ all_day: false
 
 # Schedule page publish date (NOT talk date).
 publishDate: '2017-01-01T00:00:00Z'
+
+reading_time: false
+show_date: false
+share: true
 
 authors:
   - admin

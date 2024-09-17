@@ -3,6 +3,8 @@ title: Introduction to Causal Inference using Observational Data in the Social S
 summary: Learn the fundamental concepts of causal inference, and start applying causal inference techniques. 
 type: docs
 math: false
+reading_time: false
+
 tags:
   - Causal Inference
   - Longitudinal Data Analysis

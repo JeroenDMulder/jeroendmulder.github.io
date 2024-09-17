@@ -6,11 +6,14 @@ math: false
 tags:
   - Mplus
   - Structural Equation Modeling
+reading_time: false
+show_date: false
+share: true
 ---
 
 This course, "Introduction to Structural Equation Modeling using Mplus", is a five-day summer school course hosted by Utrecht University’s department of Methodology and Statistics in Utrecht, the Netherlands. The main objective is to teach students how to analyze several models with Mplus (e.g. path models, multiple group models, mediation and moderation, confirmatory factor analysis, and longitudinal models). It also include a consultation day in which students can work on their own research project, while getting advice from experts involved in the course. 
 
-**My Responsibilities**
+## My Responsibilities
 I teach and organize multiple days in this course. The topics I teach about include: 
 
 - Full structural equation modeling (combining the measurement model, and structural model).

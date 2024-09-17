@@ -27,4 +27,8 @@ links:
   url: https://jeroendmulder.github.io/social-emotion-regulation/
 
 url_pdf: https://www.sciencedirect.com/science/article/pii/S1878929324000264/pdfft?md5=9db17c3dfb21b1a2908c85f777f52caf&pid=1-s2.0-S1878929324000264-main.pdf
+
+reading_time: false
+show_date: false
+share: true
 ---

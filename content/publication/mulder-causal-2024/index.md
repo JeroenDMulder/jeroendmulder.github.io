@@ -1,10 +1,10 @@
 ---
 title: 'Causal effects of time-varying exposures: A comparison of structural equation modeling and marginal structural models in cross-lagged panel research'
 authors:
-- Jeroen D. Mulder
-- Kim Luijken
-- Bas B. L. Penning de Vries
-- Ellen L. Hamaker
+- 'Jeroen D. Mulder'
+- 'Kim Luijken'
+- 'Bas B. L. Penning de Vries'
+- 'Ellen L. Hamaker'
 author_notes:
 - 'Equal contribution'
 - 'Equal contribution'
@@ -34,5 +34,9 @@ links:
     url: https://jeroendmulder.github.io/SEM-and-MSM
 
 url_pdf: https://www.tandfonline.com/doi/pdf/10.1080/10705511.2020.1784738?download=true
+
+reading_time: false
+show_date: false
+share: true
 
 ---

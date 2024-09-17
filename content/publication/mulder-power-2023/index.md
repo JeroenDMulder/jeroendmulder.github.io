@@ -25,4 +25,8 @@ links:
 
 url_code: https://cloud.r-project.org/web/packages/powRICLPM/index.html
 url_pdf: https://www.tandfonline.com/doi/pdf/10.1080/10705511.2022.2122467?download=true
+
+reading_time: false
+show_date: false
+share: true
 ---

@@ -29,5 +29,7 @@ links:
 
 url_pdf: https://www.tandfonline.com/doi/pdf/10.1080/10705511.2020.1784738?download=true
 
-
+reading_time: false
+show_date: false
+share: true
 ---

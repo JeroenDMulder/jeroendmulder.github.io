@@ -1,9 +1,15 @@
 ---
 title: Causal Inference in Cross-Lagged Panel Research
 
-location: Max Planck Institute for Human Development
+event: Invited Talks
+event_url: ''
 
-summary: An invited talk about issues and solutions in causal inference in cross-lagged panel research.
+location: Max Planck Institute for Human Development
+address:
+  city: Berlin
+  country: Germany
+
+summary: An invited talk about issues and solutions in causal inference in cross-lagged panel research at the Max Planck Institute for Human Development.
 abstract: 'Cross-lagged panel modeling approaches are well-established in psychological research for investigating of causal relations between variables over time using panel data. However, critics of this practice in the causal inference literature state that SEM models depend heavily on parametric assumptions; since these are likely to be violated---at least to some degree---in practice, they argue that SEM models are prone to bias when used for causal inference. Obviously, this claim should raise concerns, but disciplinary differences hinders SEM users to appreciate the arguments, concerns, and alternative modeling approaches that are put forward by critics in fields like epidemiology and biostatistics. To address this issue, this presentation introduces the phases of the potential outcomes approach to causal inference, discusses the assumptions that are made throughout the causal inference process, and discusses reasons why cross-lagged panel modeling approaches might be best avoided when the goal is investigate a causal research question. '
 
 # Talk start and end times.
@@ -19,6 +25,11 @@ tags: []
 
 # Is this a featured talk? (true/false)
 featured: true
+
+reading_time: false
+show_date: false
+share: true
+
 
 #links:
 #  - icon: twitter

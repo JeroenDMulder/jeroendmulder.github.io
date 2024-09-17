@@ -25,4 +25,8 @@ links:
   url: https://github.com/JeroenDMulder/CID-goals-and-design
 
 url_pdf: https://www.sciencedirect.com/science/article/pii/S1878929320301171/pdfft?md5=e5e628b958a5ec6d8e4e957d2be8b3be&pid=1-s2.0-S1878929320301171-main.pdf
+
+reading_time: false
+show_date: false
+share: true
 ---

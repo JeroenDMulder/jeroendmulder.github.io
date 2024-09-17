@@ -16,7 +16,7 @@ main:
   - name: Experience
     url: experience/
     weight: 20
-  - name: Projects
+  - name: Consultation
     url: projects/
     weight: 30
   - name: Teaching

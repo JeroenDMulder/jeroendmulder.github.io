@@ -24,4 +24,8 @@ tags:
   - Random Intercept Cross-Lagged Panel Model
   - Cross-Lagged Panel Modeling
   - Within-Person Dynamics
+
+reading_time: false
+show_date: false
+share: true
 ---

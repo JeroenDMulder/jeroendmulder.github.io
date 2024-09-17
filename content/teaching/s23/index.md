@@ -7,11 +7,14 @@ tags:
   - Mplus
   - Structural Equation Modeling
   - Longitudinal Data Analysis
+reading_time: false
+show_date: false
+share: true
 ---
 
 This course, "Advanced Course on using Mplus", is a five-day summer school course hosted by Utrecht University’s department of Methodology and Statistics in Utrecht, the Netherlands. It consists of in-depth lectures on the fundamentals of SEM, Mplus, and advanced longitudinal models such as various cross-lagged panel models, growth curve models, longitudinal models with categorical latent variables, and dynamic structural equation models. 
 
-**My Responsibilities**
+## My Responsibilities
 I teach and organize multiple days in this course. The topics I teach about include: 
 
 - Latent growth curve modeling,

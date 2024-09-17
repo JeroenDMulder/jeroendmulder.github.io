@@ -27,4 +27,8 @@ links:
   url: https://jeroendmulder.github.io/predicting-PTSD-using-LGCM
 
 url_pdf: https://www.mdpi.com/2077-0383/10/18/4152/pdf?version=1632463162
+
+reading_time: false
+show_date: false
+share: true
 ---
