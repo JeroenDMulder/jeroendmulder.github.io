@@ -72,24 +72,32 @@ work:
   - position: Postdoctoral researcher
     company_name: Universiteit Utrecht
     company_url: ''
-    company_logo: ''
+    company_logo: 'UU.png'
     date_start: 2023-11-01
     date_end: ''
-    summary: |2-
+    summary: |
       Responsibilities include:
       - Statistical research concerning causal inference in the social sciences
       - Teaching at the undergraduate, graduate, and postgraduate level
       - Coordinating and organizing education- and research-related activities
   - position: Radio DJ
     company_name: NPO Radio 2 (BNNVARA)
-    company_url: ''
-    company_logo: ''
+    company_logo: 'NPORadio2.png'
     date_start: 2020-04-01
     date_end: 2021-12-31
     summary: |
-      Responsibilities include:
+      Responsibilities included:
       - Editing, production, and presentation of the program WILDGROEI (BNNVARA)
       - Occassional editing and presentation for De Staat van Stasse (KRO-NCRV) and Giel (BNNVARA)
+  - position: Junior teacher
+    company_name: Universiteit Utrecht
+    company_logo: 'UU.png'
+    date_start: 2018-08-01
+    date_end: 2019-04-31
+    summary: |
+      Responsibilities included:
+      - Teaching statistical courses at bachelor, master, and postgraduate level.
+      - Organzing education 
 
 languages:
   - name: Dutch

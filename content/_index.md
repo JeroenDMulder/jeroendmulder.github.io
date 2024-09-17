@@ -1,7 +1,7 @@
 ---
 # Leave the homepage title empty to use the site title
 title: ""
-date: 2022-10-24
+date: 2024-09-17
 type: landing
 
 design:
@@ -14,10 +14,6 @@ sections:
       # Choose a user profile to display (a folder name within `content/authors/`)
       username: admin
       text: ""
-      # Show a call-to-action button under your biography? (optional)
-      button:
-        text: Download CV
-        url: uploads/resume.pdf
     design:
       css_class: dark
       background:
@@ -35,11 +31,11 @@ sections:
       title: '📚 My Research'
       subtitle: ''
       text: |-
-        speak to your mission. I'm a research scientist in the Moonshot team at DeepMind. I blog about machine learning, deep learning, and moonshots.
+        Currently, my project concerns the use causal inference techniques (e.g., g-methods, debiased machine learning techniques) for the analysis of longitudinal, observational data in psychological research. 
 
-        I apply a range of qualitative and quantitative methods to comprehensively investigate the role of science and technology in the economy.
+        I find it important to always keep the end-users of the statistical methods (i.e., applied researchers) in mind. Therefore, I devote considerable time to the readability and comprehensibility of my academic articles; develop user-friendly applications for others to apply analytical techniques; and enjoy presenting about it at conferences and during lectures for bachelor and master students, doctoral candidates, and postdoctoral researchers.
         
-        Please reach out to collaborate 😃
+        If you have questions or suggestions for collaborations (both methodological or more empirical work), or if you are interested in consultation, please do not hesitate to contact me.
     design:
       columns: '1'
   - block: collection
