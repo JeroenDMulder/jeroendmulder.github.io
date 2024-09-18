@@ -34,8 +34,9 @@ tags: []
 featured: true
 
 image:
+  placement: 2
   caption: ''
-  focal_point: Right
+  focal_point: Smart
 
 #links:
 #  - icon: twitter
