@@ -6,7 +6,7 @@
 # Appearance
 appearance:
   mode: light
-  color: slate
+  color: zinc
 
 # SEO
 marketing:
@@ -38,7 +38,7 @@ header:
 # Site footer
 footer:
   copyright:
-    notice: '© 2024 Jeroen D. Mulder. This work is licensed under {license}'
+    notice: '© {year} Jeroen D. Mulder. This work is licensed under {license}'
     license:
       enable: true
       allow_derivatives: false
@@ -56,3 +56,7 @@ features:
     enable: false
   privacy_pack:
     enable: false
+  repository:
+    url: 'https://github.com/<username>/<repository>'
+    content_dir: content
+    branch: main
