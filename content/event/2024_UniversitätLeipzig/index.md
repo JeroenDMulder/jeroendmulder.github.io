@@ -33,6 +33,10 @@ tags: []
 # Is this a featured talk? (true/false)
 featured: true
 
+image:
+  caption: ''
+  focal_point: Right
+
 #links:
 #  - icon: twitter
 #    icon_pack: fab
