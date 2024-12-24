@@ -9,6 +9,9 @@ view: citation
 banner:
   caption: ''
   image: ''
+
+design:
+  view: compact
 ---
 
 Below a collection of my published work.

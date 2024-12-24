@@ -1,6 +1,7 @@
 ---
 title: Introduction to Causal Inference using Observational Data in the Social Sciences
 summary: Learn the fundamental concepts of causal inference, and start applying causal inference techniques. 
+date: 2024-10-14
 type: docs
 math: false
 reading_time: false
@@ -15,6 +16,3 @@ The course "Introduction to Causal Inference using Observational Data in the Soc
 {{% callout note %}}
 For the winter semester 2024/2025, this course is an optional seminar of the “Psychology” master program at the Humboldt-Universität, Berlin. 
 {{% /callout %}}
-
-## More Information
-More information about this course can be found on the website of [Utrecht Summer School](https://utrechtsummerschool.nl/courses/data-science/introduction-to-structural-equation-modeling-using-mplus) and the [course website](https://utrechtuniversity.github.io/S20/).  
