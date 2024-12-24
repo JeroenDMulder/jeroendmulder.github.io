@@ -42,13 +42,13 @@ sections:
     id: papers
     content:
       title: Featured Publications
+      subtitle: ''
       filters:
         folders:
           - publication
         featured_only: true
     design:
       view: compact
-      columns: 1
   - block: collection
     id: talks
     content:
@@ -57,6 +57,6 @@ sections:
         folders:
           - event
     design:
-      view: article-grid
-      columns: 2
+      view: card
+      columns: '2'
 ---
