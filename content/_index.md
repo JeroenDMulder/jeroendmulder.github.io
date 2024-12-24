@@ -1,7 +1,7 @@
 ---
 # Leave the homepage title empty to use the site title
 title: ""
-date: 2024-09-17
+date: 2024-12-25
 type: landing
 
 design:
@@ -31,7 +31,7 @@ sections:
       title: '📚 My Research'
       subtitle: ''
       text: |-
-        Currently, my project concerns the use causal inference techniques (e.g., g-methods, debiased machine learning techniques) for the analysis of longitudinal, observational data in psychological research. 
+        Currently, my project concerns the use causal inference techniques (e.g., g-methods, debiased machine learning techniques) for the analysis of longitudinal, observational data in research in psychology and related disciplines. 
 
         I find it important to always keep the end-users of the statistical methods (i.e., applied researchers) in mind. Therefore, I devote considerable time to the readability and comprehensibility of my academic articles; develop user-friendly applications for others to apply analytical techniques; and enjoy presenting about it at conferences and during lectures for bachelor and master students, doctoral candidates, and postdoctoral researchers.
         
@@ -47,18 +47,8 @@ sections:
           - publication
         featured_only: true
     design:
-      view: article-grid
-      columns: 2
-  - block: collection
-    content:
-      title: Recent Publications
-      text: ""
-      filters:
-        folders:
-          - publication
-        exclude_featured: false
-    design:
-      view: citation
+      view: compact
+      columns: 1
   - block: collection
     id: talks
     content:
@@ -68,5 +58,5 @@ sections:
           - event
     design:
       view: article-grid
-      columns: 1
+      columns: 2
 ---

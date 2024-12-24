@@ -22,7 +22,6 @@ role: Postdoctoral researcher
 organizations:
   - name: Universiteit Utrecht
     url: https://www.uu.nl/staff/JDMulder
-  - name: Humboldt-Universität
 
 # Social network links
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
@@ -105,10 +104,10 @@ languages:
   - name: English
     percent: 100
   - name: German
-    percent: 50
+    percent: 70
 
 ---
 
 ## Welkom, Welcome, Wilkommen
 
-Hi there! My name is Jeroen, and I am a statistical researcher specialized in longitudinal data analysis methods for causal inference. In my research, I evaluate, compare, and develop analysis methods that are used in a variety of disciplines, ranging from psychology and social sciences, to epidemiology and biostatistics. I currently work as a postdoctoral researcher at Utrecht University (the Netherlands) and as a lecturer at Humboldt-Universität (Berlin, Germany). 
+Hi there! My name is Jeroen, and I am a statistical researcher specialized in longitudinal data analysis methods for causal inference. In my research, I evaluate, compare, and develop analysis methods that are used in a variety of disciplines, ranging from psychology and social sciences, to epidemiology and biostatistics. I currently work as a postdoctoral researcher at Utrecht University (the Netherlands). 
