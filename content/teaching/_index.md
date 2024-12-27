@@ -1,13 +1,18 @@
 ---
 title: Teaching
-summary: My courses
-type: landing
+cms_exclude: true
+#url: talk
+
+# View
 view: card
-layout: "events"
+
+# Optional cover image (relative to `assets/media/` folder).
+image:
+  caption: ''
+  filename: ''
 
 design:
-  view: article-grid
-  columns: 2
+  view: showcase
 ---
 
 A collection of recent and upcoming courses that I am involved in. 
