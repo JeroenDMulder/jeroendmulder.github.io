@@ -3,6 +3,7 @@ title: Teaching
 summary: My courses
 type: landing
 view: card
+layout: "events"
 
 design:
   view: article-grid
