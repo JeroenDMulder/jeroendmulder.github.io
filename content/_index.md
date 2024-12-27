@@ -55,7 +55,8 @@ sections:
       title: Recent & Upcoming Talks
       filters:
         folders:
-          - event
+          - events
+        featured_only: true
     design:
       view: card
       columns: '2'
