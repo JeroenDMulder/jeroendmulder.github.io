@@ -2,7 +2,6 @@
 title: Teaching
 summary: My courses
 type: landing
-
 view: card
 
 design:

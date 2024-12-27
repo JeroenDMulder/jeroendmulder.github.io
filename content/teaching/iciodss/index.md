@@ -2,7 +2,6 @@
 title: Introduction to Causal Inference using Observational Data in the Social Sciences
 summary: Learn the fundamental concepts of causal inference, and start applying causal inference techniques. 
 date: 2024-10-14
-type: docs
 math: false
 reading_time: false
 

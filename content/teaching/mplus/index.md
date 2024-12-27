@@ -2,7 +2,6 @@
 title: Mplus Summer School
 summary: A Utrecht Summer School course on structural equation modeling using Mplus.
 date: 2024-08-11
-type: docs
 math: false
 tags:
   - Mplus
