@@ -11,7 +11,7 @@ reading_time: false
 show_date: false
 share: true
 image:
-  placement: 3
+  placement: 2
   focal_point: 'Center'
   preview_only: false
 ---
