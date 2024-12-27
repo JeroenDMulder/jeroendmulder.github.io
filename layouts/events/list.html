@@ -1,0 +1,36 @@
+{{ define "main" }}
+<section id="upcoming-events">
+  <h2>Upcoming Events</h2>
+  {{ $now := now }}
+  {{ range where .Pages ".Params.date" ">" $now }}
+    <div class="event">
+      <h3>{{ .Title }}</h3>
+      <p><strong>When:</strong> {{ .Params.date.Format "January 2, 2006" }}</p>
+      <p><strong>Where:</strong> {{ .Params.location }}</p>
+      {{ with .Params.event }}
+        <p><strong>Event:</strong> {{ . }}</p>
+      {{ end }}
+      {{ with .Params.event_url }}
+        <p><a href="{{ . }}" target="_blank">Learn More</a></p>
+      {{ end }}
+    </div>
+  {{ end }}
+</section>
+
+<section id="past-events">
+  <h2>Past Events</h2>
+  {{ range where .Pages ".Params.date" "<=" $now }}
+    <div class="event">
+      <h3>{{ .Title }}</h3>
+      <p><strong>When:</strong> {{ .Params.date.Format "January 2, 2006" }}</p>
+      <p><strong>Where:</strong> {{ .Params.location }}</p>
+      {{ with .Params.event }}
+        <p><strong>Event:</strong> {{ . }}</p>
+      {{ end }}
+      {{ with .Params.url_video }}
+        <p><a href="{{ . }}" target="_blank">Watch Video</a></p>
+      {{ end }}
+    </div>
+  {{ end }}
+</section>
+{{ end }}

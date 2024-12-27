@@ -1,6 +1,7 @@
 ---
 title: 'Closing Closets: The Upside of Disclosing Your Sexual Identity'
-date: '2016-04-28'
+date: '2016-04-28T09:00:00'
+end_date: '2016-04-28T17:00:00'
 event: TEDxTwenteU
 location: Universiteit Twente
 address:
