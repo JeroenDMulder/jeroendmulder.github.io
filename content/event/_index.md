@@ -1,17 +1,6 @@
 ---
-title: Recent & Upcoming Talks
-cms_exclude: true
-#url: talk
-
-# View
-view: card
-
-# Optional cover image (relative to `assets/media/` folder).
-image:
-  caption: ''
-  filename: ''
-
-design:
-  view: compact
+title: Talks and Events
+subtitle: "Explore upcoming and past talks."
+layout: "events"
 ---
 

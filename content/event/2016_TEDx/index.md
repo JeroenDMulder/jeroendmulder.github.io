@@ -1,13 +1,20 @@
 ---
 title: 'Closing Closets: The Upside of Disclosing Your Sexual Identity'
-
+date: '2016-04-28'
 event: TEDxTwenteU
-event_url: 'https://www.youtube.com/watch?v=f55N3O4PPMc'
-
 location: Universiteit Twente
 address:
   city: Enschede
   country: The Netherlands
+
+# URL links (optional)
+event_url: 'https://www.utwente.nl/en/events/2016/4/493614/tedxtwenteu2016'
+url_video: 'https://www.youtube.com/watch?v=f55N3O4PPMc'
+
+# Image (optional)
+
+# Tags (optional)
+
 
 summary: 'A personal TED-talk about disclosing your sexual identity. I gave this talk when I was a student in Communication Sciences at the University of Twente.'
 
@@ -15,7 +22,7 @@ abstract: '"Coming out of the closet" is the term we use when we talk about disc
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
-date: '2016-04-28'
+
 # date_end: '2030-06-01T15:00:00Z'
 all_day: false
 

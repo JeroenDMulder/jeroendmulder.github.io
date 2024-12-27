@@ -1,7 +1,7 @@
 ---
 title: 'Consultation'
 date: 2024-05-19
-type: docs
+type: landing
 math: false
 
 design:
