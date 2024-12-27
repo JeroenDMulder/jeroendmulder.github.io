@@ -12,6 +12,8 @@ publication_types: ["article-journal"]
 # Publication name
 publication: '*Structural Equation Modeling: A Multidisciplinary Journal, 28*(4)'
 
+summary: 'A didactical introduction to the random intercept cross-lagged panel model and three popular extensions thereof. It includes fully annotated R code and Mplus syntax in the online supplementary materials.'
+
 abstract: 'The random intercept cross-lagged panel model (RI-CLPM) is rapidly gaining popularity in psychology and related fields as a structural equation modeling (SEM) approach to longitudinal data. It decomposes observed scores into within-unit dynamics and stable, between-unit differences. This paper discusses three extensions of the RI-CLPM that researchers may be interested in, but are unsure of how to accomplish: (a) including stable, person-level characteristics as predictors and/or outcomes; (b) specifying a multiple-group version; and (c) including multiple indicators. For each extension, we discuss which models need to be run in order to investigate underlying assumptions, and we demonstrate the various modeling options using a motivating example. We provide fully annotated code for the R package lavaan, and Mplus on an accompanying website.'
 
 links:

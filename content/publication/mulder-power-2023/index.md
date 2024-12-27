@@ -11,6 +11,8 @@ publication_types: ["article-journal"]
 publication: '*Structural Equation Modeling: A Multidisciplinary Journal, 30*(4)'
 publication_short: ""
 
+summary: 'A proposal for a power analysis strategy for the popular random intercept cross-lagged panel model. This strategy is implemented in the R package `powRICLPM`.'
+
 abstract: 'The random intercept cross-lagged panel model (RI-CLPM) is a popular model among psychologists for studying reciprocal effects in longitudinal panel data. Although various texts and software packages have been published concerning power analyses for structural equation models (SEM) generally, none have proposed a power analysis strategy that is tailored to the particularities of the RI-CLPM. This can be problematic because mismatches between the power analysis design, the model, and reality, can negatively impact the validity of the recommended sample size and number of repeated measures. As power analyses play an increasingly important role in the preparation phase of research projects, an RI-CLPM-specific strategy for the design of a power analysis is detailed, and implemented in the R package powRICLPM. This paper focuses on the (basic) bivariate RI-CLPM, and extensions to include constraints over time, measurement error (leading to the stable trait autoregressive trait state model), non-normal data, and bounded estimation.'
 
 tags: 

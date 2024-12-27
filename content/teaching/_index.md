@@ -3,22 +3,11 @@ title: Teaching
 summary: My courses
 type: landing
 
-cascade:
-  - _target:
-      kind: page
-    params:
-      show_breadcrumb: true
+view: card
 
-sections:
-  - block: collection
-    id: teaching
-    content:
-      title: Teaching
-      filters:
-        folders:
-          - teaching
-    design:
-      view: article-grid
-      columns: 2
+design:
+  view: article-grid
+  columns: 2
 ---
 
+A collection of recent and upcoming courses that I am involved in. 
