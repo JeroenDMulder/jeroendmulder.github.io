@@ -10,15 +10,18 @@ main:
   - name: Publications
     url: /publication/
     weight: 20
-  - name: Talks
+  - name: Workshops & Talks
     url: /events
     weight: 30
+  - name: Blog
+    url: /post
+    weight: 40
   - name: Teaching
     url: teaching/
-    weight: 40
+    weight: 50
   - name: Consultation
     url: /consultation/
-    weight: 50
+    weight: 60
   - name: Experience
     url: experience/
-    weight: 60
+    weight: 70

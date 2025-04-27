@@ -31,7 +31,7 @@ sections:
       title: '📚 My Research'
       subtitle: ''
       text: |-
-        Currently, my project concerns the use causal inference techniques (e.g., g-methods, debiased machine learning techniques) for the analysis of longitudinal, observational data in research in psychology and related disciplines. 
+        Currently, my project concerns the use causal inference techniques (e.g., g-methods, debiased machine learning techniques) for the analysis of longitudinal, observational data in research in psychology and related disciplines. I take an interdisciplinary approach, combining techniques from different modeling traditions and disciplines, and studying how we can best apply them in a social science context.
 
         I find it important to always keep the end-users of the statistical methods (i.e., applied researchers) in mind. Therefore, I devote considerable time to the readability and comprehensibility of my academic articles; develop user-friendly applications for others to apply analytical techniques; and enjoy presenting about it at conferences and during lectures for bachelor and master students, doctoral candidates, and postdoctoral researchers.
         
