@@ -15,7 +15,7 @@ sections:
   - block: papers-table
     content:
       title: Research
-      text: "An overview of my research output, including scientific papers, book chapters, and R packages. In my reseach, I connect methods across disciplines and try to improve modeling practices in the social sciences. Currently, I work on the development and implemention of a *distribution estimation* framework by [Prof. Dr. Matteo Bottai](https://ki.se/en/people/matteo-bottai), as well as multiple projects concerning the use of *longitudinal SEM* methods to study *causal relationships*." 
+      text: "An overview of my research output, including scientific papers, book chapters, and R packages. In my reseach, I connect methods across disciplines and try to improve modeling practices in the social sciences. Currently, I work on the development and implemention of a **distribution estimation** framework by [Prof. Dr. Matteo Bottai](https://ki.se/en/people/matteo-bottai), as well as multiple projects concerning the use of **longitudinal SEM** methods to study **causal relationships**." 
       show_topics: true
       filter: true
 ---

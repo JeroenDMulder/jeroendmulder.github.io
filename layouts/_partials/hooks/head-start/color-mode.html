@@ -1,0 +1,8 @@
+{{/* The theme switch is turned off (params.yaml: header.theme_toggle: false), so the
+     colour mode should always follow `theme.mode` in params.yaml. The theme still
+     honours a choice saved in the browser earlier (localStorage "wc-color-theme"),
+     which would override that setting with no way to change it. Remove it before the
+     theme's own script reads it. Runs at the very start of <head>. */}}
+<script>
+  try { localStorage.removeItem('wc-color-theme'); } catch (e) {}
+</script>
