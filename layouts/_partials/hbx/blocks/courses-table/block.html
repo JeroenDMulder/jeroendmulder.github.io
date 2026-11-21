@@ -1,0 +1,88 @@
+{{/* Custom block: courses-table
+     Renders `data/courses.yaml` as a compact table, newest first.
+     Same look as the talks-table and papers-table blocks.
+
+     Usage in a landing page:
+       - block: courses-table
+         content:
+           title: Courses
+           text: Optional intro (Markdown).
+           levels: [Master, PhD]   # optional: only show these levels
+*/}}
+{{ $page := .wcPage }}
+{{ $block := .wcBlock }}
+{{ $content := $block.content }}
+{{ if not (reflect.IsMap $content) }}{{ $content = dict }}{{ end }}
+
+{{ $courses := slice }}
+{{ with hugo.Data.courses }}{{ $courses = . }}{{ end }}
+
+{{/* Optional level filter */}}
+{{ with index $content "levels" }}
+  {{ $levels := . }}
+  {{ $filtered := slice }}
+  {{ range $courses }}{{ if in $levels .level }}{{ $filtered = $filtered | append . }}{{ end }}{{ end }}
+  {{ $courses = $filtered }}
+{{ end }}
+
+{{/* Sort newest first (dates as YYYY-MM-DD sort correctly as text) */}}
+{{ $rows := slice }}
+{{ range $courses }}
+  {{ $rows = $rows | append (merge . (dict "sort_key" (printf "%v" .date))) }}
+{{ end }}
+{{ $rows = sort $rows "sort_key" "desc" }}
+
+<div class="mx-auto w-full max-w-5xl px-4 sm:px-6">
+  {{ with index $content "title" }}
+  <h2 class="mb-4 text-3xl font-bold text-gray-900 dark:text-white">{{ printf "%v" . | emojify | $page.RenderString }}</h2>
+  {{ end }}
+  {{ with index $content "text" }}
+  <div class="prose prose-slate dark:prose-invert mb-8 max-w-none">{{ printf "%v" . | emojify | $page.RenderString | safeHTML }}</div>
+  {{ end }}
+
+  {{ if $rows }}
+  <div class="overflow-x-auto rounded-lg border border-gray-200 dark:border-gray-700">
+    <table class="w-full min-w-[40rem] text-left text-sm">
+      <thead class="bg-gray-50 text-xs uppercase tracking-wide text-gray-600 dark:bg-gray-800 dark:text-gray-300">
+        <tr>
+          <th scope="col" class="px-4 py-3 font-semibold">Date</th>
+          <th scope="col" class="px-4 py-3 font-semibold">Course</th>
+          <th scope="col" class="px-4 py-3 font-semibold">University &amp; location</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+        {{ range $rows }}
+        <tr class="align-top hover:bg-gray-50 dark:hover:bg-gray-800/50">
+          <td class="whitespace-nowrap px-4 py-4 text-gray-600 dark:text-gray-400">
+            {{ with .period }}{{ . }}{{ else }}{{ with .date }}{{ (time.AsTime .) | time.Format "Jan 2006" }}{{ end }}{{ end }}
+          </td>
+          <td class="px-4 py-4">
+            <div class="font-semibold text-gray-900 dark:text-white">{{ .title | $page.RenderString }}</div>
+            {{ with .description }}
+            <div class="mt-1 text-gray-600 dark:text-gray-400">{{ . | $page.RenderString }}</div>
+            {{ end }}
+            <div class="mt-2 flex flex-wrap items-center gap-2">
+              {{ with .level }}
+              <span class="rounded-full bg-primary-100 px-2.5 py-0.5 text-xs font-medium text-primary-800 dark:bg-primary-900/50 dark:text-primary-200">{{ . }}</span>
+              {{ end }}
+              {{ with .role }}
+              <span class="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-700 dark:bg-gray-800 dark:text-gray-300">{{ . }}</span>
+              {{ end }}
+              {{ range .links }}
+              <a href="{{ .url }}" target="_blank" rel="noopener" class="rounded-full border border-gray-300 px-2.5 py-0.5 text-xs font-medium text-gray-700 hover:border-primary-500 hover:text-primary-700 dark:border-gray-600 dark:text-gray-300 dark:hover:text-primary-300">{{ .name }}</a>
+              {{ end }}
+            </div>
+          </td>
+          <td class="px-4 py-4 text-gray-700 dark:text-gray-300">
+            {{ with .institution }}<div class="font-medium">{{ . }}</div>{{ end }}
+            {{ with .location }}<div class="text-gray-600 dark:text-gray-400">{{ . }}</div>{{ end }}
+          </td>
+        </tr>
+        {{ end }}
+      </tbody>
+    </table>
+  </div>
+  {{ else }}
+  <p class="text-gray-600 dark:text-gray-400">No courses yet.</p>
+  {{ end }}
+</div>

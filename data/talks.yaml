@@ -1,0 +1,89 @@
+# Talks & Workshops
+# ─────────────────────────────────────────────────────────────────────────────
+# One entry per talk. Shown as a table on /talks/, newest first (order in this
+# file does not matter). Copy an entry to add a new one.
+#
+#   date:        YYYY-MM-DD (required)
+#   title:       title of the talk (required)
+#   type:        Conference presentation | Invited talk | Invited workshop |
+#                Public talk | Panel discussion  (or anything else)
+#   event:       name of the conference, seminar series or host (optional)
+#   event_url:   link for the event name (optional)
+#   location:    institution / venue, city, country
+#   description: one or two lines (Markdown allowed)
+#   links:       optional list of {name, url}, e.g. Slides, Video, Materials
+#
+# Only .yaml files may be placed in `data/`. Images or PDFs here break the build.
+# ─────────────────────────────────────────────────────────────────────────────
+
+- date: 2026-09-24
+  title: 'The Random Intercept Cross-Lagged Panel Model: Theoretical Considerations and Practical Issues'
+  type: Invited workshop
+  event: AWARE midterm workshop
+  location: Institut für Publizistik- und Kommunikationswissenschaft, Universität Wien, Vienna
+  description: A full-day workshop and consultation sesssion to address statistical challenges related to the on-going longitudinal AWARE project. 
+  links:
+    - name: Event page
+      url: https://reel.univie.ac.at/detailansicht/aware-midterm-workshop-in-vienna
+      
+- date: 2026-04-10
+  title: Analysis Perspectives on the Trondheim Early Secure Study (TESS)
+  type: Invited workshop
+  location: Norwegian University of Science and Technology, Norway
+  description: A full-day workshop and consultation sesssion to address statistical challenges related to the on-going longitudinal Trondheim Early Secure Study. 
+
+- date: 2025-11-01
+  title: Workshop "Causal Inference" for the Scientific Research and Data Center (Ministry of Justice and Security)
+  type: On-demand workshop
+  location: Ministry of Justice and Security, The Hague, The Netherlands
+  description: An on-demand three-day workshop about the estimation of causal effects based on repeated measures data. 
+
+- date: 2025-03-27
+  title: Causal Inference in Cross-Lagged Panel Research
+  type: Invited workshop
+  location: PROMENTA, Universitetet i Oslo, Norway
+  description: A two-day workshop for the PROMENTA research group (including a publicely accessible talk) about the use of longitudinal structural equation models and g-methods for causal inference. 
+
+- date: 2025-04-17
+  title: Two Perspective on the Random Intercept Cross-Lagged Panel Model
+  type: Invited talk
+  event: LIFE Seminar
+  location: Max Planck Institute for Human Development, Berlin, Germany
+  description: A comparison of a "stability" perspective versus a "causal inference" perspective on the random intercept cross-lagged panel model. 
+
+- date: 2025-03-12
+  title: Causal Inference in Cross-Lagged Panel Research
+  type: Invited workshop
+  location: Institute for Media Studies, KU Leuven, Belgium
+  description: A two-day workshop and consultation session focused on the appropriateness of various longitudinal data analysis methods to study the researchers' research questions. 
+
+- date: 2025-01-21
+  title: Wetenschnapps XXL 25
+  type: Panel discussion
+  event: Wetenschnapps XXL
+  event_url: https://www.uu.nl/organisatie/publiekenwetenschap/wetenschnapps-xxl-25
+  location: Universiteit Utrecht, Utrecht, The Netherlands
+  description: How can researchers find the right experts for studying (the impact of) science communication efforts?
+
+- date: 2024-10-09
+  title: Causal Inference in Cross-Lagged Panel Research
+  type: Invited talk
+  location: Max Planck Institute for Human Development, Berlin, Germany
+  description: Issues and solutions for causal inference in cross-lagged panel research, and why cross-lagged panel models may be best avoided for causal research questions.
+
+- date: 2024-10-01
+  title: Causal Inference in Cross-Lagged Panel Research
+  type: Invited talk
+  location: Universität Leipzig, Leipzig, Germany
+  description: Issues and solutions for causal inference in cross-lagged panel research, and why cross-lagged panel models may be best avoided for causal research questions.
+
+- date: 2016-04-28
+  title: 'Closing Closets: The Upside of Disclosing Your Sexual Identity'
+  type: Public talk
+  event: TEDxTwenteU
+  event_url: https://www.utwente.nl/en/events/2016/4/493614/tedxtwenteu2016
+  location: Universiteit Twente, Enschede, The Netherlands
+  description: A personal talk about disclosing your sexual identity, given while I was a Communication Science student.
+  links:
+    - name: Video
+      url: https://www.youtube.com/watch?v=f55N3O4PPMc

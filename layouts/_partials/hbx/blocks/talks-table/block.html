@@ -1,0 +1,93 @@
+{{/* Custom block: talks-table
+     Renders `data/talks.yaml` as a compact table, newest first.
+
+     Usage in a landing page:
+       - block: talks-table
+         content:
+           title: Talks & Workshops
+           text: Optional intro (Markdown).
+           types: [Invited workshop]   # optional: only show these types
+*/}}
+{{ $page := .wcPage }}
+{{ $block := .wcBlock }}
+{{ $content := $block.content }}
+{{ if not (reflect.IsMap $content) }}{{ $content = dict }}{{ end }}
+
+{{ $talks := slice }}
+{{ with hugo.Data.talks }}{{ $talks = . }}{{ end }}
+
+{{/* Optional type filter */}}
+{{ with index $content "types" }}
+  {{ $types := . }}
+  {{ $filtered := slice }}
+  {{ range $talks }}{{ if in $types .type }}{{ $filtered = $filtered | append . }}{{ end }}{{ end }}
+  {{ $talks = $filtered }}
+{{ end }}
+
+{{/* Sort newest first (dates as YYYY-MM-DD sort correctly as text) */}}
+{{ $rows := slice }}
+{{ range $talks }}
+  {{ $rows = $rows | append (merge . (dict "sort_key" (printf "%v" .date))) }}
+{{ end }}
+{{ $rows = sort $rows "sort_key" "desc" }}
+
+<div class="mx-auto w-full max-w-5xl px-4 sm:px-6">
+  {{ with index $content "title" }}
+  <h2 class="mb-4 text-3xl font-bold text-gray-900 dark:text-white">{{ printf "%v" . | emojify | $page.RenderString }}</h2>
+  {{ end }}
+  {{ with index $content "text" }}
+  <div class="prose prose-slate dark:prose-invert mb-8 max-w-none">{{ printf "%v" . | emojify | $page.RenderString | safeHTML }}</div>
+  {{ end }}
+
+  {{ if $rows }}
+  <div class="overflow-x-auto rounded-lg border border-gray-200 dark:border-gray-700">
+    <table class="w-full min-w-[40rem] text-left text-sm">
+      <thead class="bg-gray-50 text-xs uppercase tracking-wide text-gray-600 dark:bg-gray-800 dark:text-gray-300">
+        <tr>
+          <th scope="col" class="px-4 py-3 font-semibold">Date</th>
+          <th scope="col" class="px-4 py-3 font-semibold">Talk</th>
+          <th scope="col" class="px-4 py-3 font-semibold">Event &amp; location</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+        {{ range $rows }}
+        <tr class="align-top hover:bg-gray-50 dark:hover:bg-gray-800/50">
+          <td class="whitespace-nowrap px-4 py-4 text-gray-600 dark:text-gray-400">
+            {{ with .date }}{{ (time.AsTime .) | time.Format "Jan 2006" }}{{ end }}
+          </td>
+          <td class="px-4 py-4">
+            <div class="font-semibold text-gray-900 dark:text-white">{{ .title | $page.RenderString }}</div>
+            {{ with .description }}
+            <div class="mt-1 text-gray-600 dark:text-gray-400">{{ . | $page.RenderString }}</div>
+            {{ end }}
+            <div class="mt-2 flex flex-wrap items-center gap-2">
+              {{ with .type }}
+              <span class="rounded-full bg-primary-100 px-2.5 py-0.5 text-xs font-medium text-primary-800 dark:bg-primary-900/50 dark:text-primary-200">{{ . }}</span>
+              {{ end }}
+              {{ range .links }}
+              <a href="{{ .url }}" target="_blank" rel="noopener" class="rounded-full border border-gray-300 px-2.5 py-0.5 text-xs font-medium text-gray-700 hover:border-primary-500 hover:text-primary-700 dark:border-gray-600 dark:text-gray-300 dark:hover:text-primary-300">{{ .name }}</a>
+              {{ end }}
+            </div>
+          </td>
+          <td class="px-4 py-4 text-gray-700 dark:text-gray-300">
+            {{ $event_url := .event_url }}
+            {{ with .event }}
+              <div class="font-medium">
+                {{- if $event_url -}}
+                <a href="{{ $event_url }}" target="_blank" rel="noopener" class="underline decoration-gray-300 underline-offset-2 hover:text-primary-700 dark:hover:text-primary-300">{{ . }}</a>
+                {{- else -}}
+                {{ . }}
+                {{- end -}}
+              </div>
+            {{ end }}
+            {{ with .location }}<div class="text-gray-600 dark:text-gray-400">{{ . }}</div>{{ end }}
+          </td>
+        </tr>
+        {{ end }}
+      </tbody>
+    </table>
+  </div>
+  {{ else }}
+  <p class="text-gray-600 dark:text-gray-400">No talks yet.</p>
+  {{ end }}
+</div>

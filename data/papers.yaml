@@ -1,0 +1,149 @@
+# Papers (research output)
+# ─────────────────────────────────────────────────────────────────────────────
+# One entry per paper. Shown as tables on /research/, newest first (order in
+# this file does not matter). Copy an entry to add a new one.
+#
+#   date:        YYYY-MM-DD (required; only the year is shown)
+#   title:       paper title (required)
+#   authors:     list of names; your own name is shown in bold
+#   journal:     journal or book name (or e.g. 'Preprint'); leave out for software
+#   volume:      optional
+#   issue:       optional
+#   doi:         optional, e.g. 10.1080/10705511.2020.1784738 (adds a DOI button)
+#   topics:      list of topics, shown as clickable labels in the Papers table.
+#                Use the same spelling for the same topic (capitals don't matter).
+#                For software or other materials use e.g. [R packages] or [Online materials].
+#   description: one or two lines (Markdown allowed)
+#   links:       optional list of {name, url}. For a PDF, put the file in
+#                `static/papers/` and use url: /papers/<file>.pdf
+#
+# Put a title or description in quotes when it contains ': ' (colon + space).
+# ─────────────────────────────────────────────────────────────────────────────
+
+- date: 2026-08-30
+  title: 'The Problem of Temporal Misalignment in Longitudinal Causal Research'
+  authors: [Jeroen D. Mulder, Manuel C. Voelkle, Ellen L. Hamaker]
+  journal: 'Multivariate Behavioral Research'
+  doi: 10.1080/00273171.2026.2720347
+  topics: [Causal inference]
+  description: 'A demonstration and explanation of the biases that can occur when there is a mismatch between the timscale at which a causal process operates, the timescale at which measurements are collected, and the time frame in measurements.'
+  link: 
+    - name: PDF
+      url: /papers/mulder_temporal_2026.pdf
+
+- date: 2024-06-17
+  title: 'Joint effects in cross-lagged panel research using structural nested mean models'
+  authors: [Jeroen D. Mulder, Satoshi Usami, Ellen L. Hamaker]
+  journal: 'Structural Equation Modeling: A Multidisciplinary Journal'
+  doi: 10.1080/10705511.2024.2355579
+  topics: [Causal inference, Longitudinal structural equation modeling]
+  description: 'An introduction to joint effects in a cross-lagged panel setting. We compare the estimation of such joint effects with structural equation models and with g-estimation of structural nested mean models.'
+  links:
+    - name: PDF
+      url: /papers/mulder-joint-2024.pdf
+    - name: Supplementary materials
+      url: https://jeroendmulder.github.io/joint-effects-using-SNMM
+
+- date: 2024-04-01
+  title: 'Behavioral and neural responses to social rejection: Individual differences in developmental trajectories across childhood and adolescence'
+  authors: [Jeroen D. Mulder, Simone Dobbelaar, Michelle Achterberg]
+  journal: Developmental Cognitive Neuroscience
+  volume: 66
+  doi: 10.1016/j.dcn.2024.101365
+  topics: [Applied]
+  description: 'We use Bayesian multilevel growth curve models to describe individual differences in the development of behavioral and neural responses to social rejection in children.'
+  links:
+    - name: PDF
+      url: /papers/mulder-behavioral-2024.pdf
+    - name: Supplementary materials
+      url: https://jeroendmulder.github.io/social-emotion-regulation/
+
+- date: 2024-03-19
+  title: 'Causal effects of time-varying exposures: A comparison of structural equation modeling and marginal structural models in cross-lagged panel research'
+  authors: [Jeroen D. Mulder, Kim Luijken, Bas B. L. Penning de Vries, Ellen L. Hamaker]
+  journal: 'Structural Equation Modeling: A Multidisciplinary Journal'
+  volume: 31
+  issue: 4
+  doi: 10.1080/10705511.2024.2316586
+  topics: [Causal inference, Longitudinal structural equation modeling]
+  description: 'We describe three phases of causal research to better understand the differences between a structural equation modeling approach and a g-methods approach to studying effects of a time-varying exposure.'
+  links:
+    - name: PDF
+      url: /papers/mulder-causal-2024.pdf
+    - name: Supplementary materials
+      url: https://jeroendmulder.github.io/SEM-and-MSM
+
+- date: 2022-11-21
+  title: 'Power analysis for the random intercept cross-lagged panel model using the powRICLPM R-package'
+  authors: [Jeroen D. Mulder]
+  journal: 'Structural Equation Modeling: A Multidisciplinary Journal'
+  volume: 30
+  issue: 4
+  doi: 10.1080/10705511.2022.2122467
+  topics: [Longitudinal structural equation modeling]
+  description: 'A power analysis strategy for the random intercept cross-lagged panel model, implemented in the R package `powRICLPM`.'
+  links:
+    - name: PDF
+      url: /papers/mulder-power-2023.pdf
+    - name: R package
+      url: https://cloud.r-project.org/web/packages/powRICLPM/index.html
+
+- date: 2021-09-15
+  title: 'Predicting outcome in an intensive outpatient PTSD treatment program using daily measures'
+  authors: [Valentijn V. P. Alting van Geusau, Jeroen D. Mulder, Suzy J. M. A. Matthijssen]
+  journal: Journal of Clinical Medicine
+  volume: 10
+  issue: 18
+  doi: 10.3390/jcm10184152
+  topics: [Applied]
+  description: 'We compare multiple latent growth curve models using k-fold cross-validation to predict PTSD after an intensive treatment program.'
+  links:
+    - name: PDF
+      url: /papers/alting-van-geusau-predicting-2021.pdf
+    - name: Supplementary materials
+      url: https://jeroendmulder.github.io/predicting-PTSD-using-LGCM
+
+- date: 2020-12-01
+  title: 'Description, prediction and causation: Methodological challenges of studying child and adolescent development'
+  authors: [Ellen L. Hamaker, Jeroen D. Mulder, Marinus H. van IJzendoorn]
+  journal: Developmental Cognitive Neuroscience
+  volume: 46
+  doi: 10.1016/j.dcn.2020.100867
+  topics: [Causal inference]
+  description: 'A didactical introduction to different goals of scientific research, and how these relate to research design, operationalization, model building and evaluation.'
+  links:
+    - name: PDF
+      url: /papers/hamaker-description-2020.pdf
+    - name: Supplementary materials
+      url: https://github.com/JeroenDMulder/CID-goals-and-design
+
+- date: 2020-08-11
+  title: 'Three extensions of the random intercept cross-lagged panel model'
+  authors: [Jeroen D. Mulder, Ellen L. Hamaker]
+  journal: 'Structural Equation Modeling: A Multidisciplinary Journal'
+  volume: 28
+  issue: 4
+  doi: 10.1080/10705511.2020.1784738
+  topics: [Longitudinal structural equation modeling]
+  description: 'A didactical introduction to the random intercept cross-lagged panel model and three popular extensions, with fully annotated R code and Mplus syntax.'
+  links:
+    - name: PDF
+      url: /papers/mulder-three-2021.pdf
+    - name: Supplementary materials
+      url: https://jeroendmulder.github.io/RI-CLPM
+
+# ── R packages ──────────────────────────────────────────────────────────────
+
+- date: 2024-10-26
+  title: 'powRICLPM: Power analysis for the RI-CLPM and STARTS model'
+  authors: [Jeroen D. Mulder]
+  journal: 'R package (version 0.2.1)'
+  topics: [R package]
+  description: 'Performs power analyses for the random intercept cross-lagged panel model and the stable trait autoregressive trait state model.'
+  links:
+    - name: CRAN
+      url: https://cran.r-project.org/package=powRICLPM
+    - name: Documentation
+      url: https://jeroendmulder.github.io/powRICLPM/
+    - name: Paper
+      url: https://doi.org/10.1080/10705511.2022.2122467

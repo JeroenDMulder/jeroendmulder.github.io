@@ -1,0 +1,18 @@
+{{/* Font fixes, added to every page via the theme's head-end hook.
+     The fonts themselves are set in data/fonts/academic-sans.yaml (`families:`).
+
+     1. The theme defines a `nav` font but never applies it, so the top bar used the
+        body font. This applies it to the site name and the menu items.
+     2. Some theme blocks (Markdown, Languages) draw their title as plain text instead of
+        a heading, so it used the body font. This gives those titles the heading font. */}}
+<style>
+  .page-header .navbar-brand,
+  .page-header .nav-link {
+    font-family: var(--hb-font-nav, var(--hb-font-heading));
+  }
+  section .mb-6.text-3xl.font-bold {
+    font-family: var(--hb-font-heading);
+    line-height: var(--hb-font-leading-heading, 1.2);
+    letter-spacing: var(--hb-font-tracking-heading, -0.02em);
+  }
+</style>

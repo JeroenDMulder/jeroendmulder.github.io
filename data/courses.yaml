@@ -1,0 +1,132 @@
+# Courses
+# ─────────────────────────────────────────────────────────────────────────────
+# One entry per course. Shown as a table on /courses/, newest first (order in
+# this file does not matter). Copy an entry to add a new one.
+#
+#   date:        YYYY-MM-DD (required; used for sorting, shown as "Mon YYYY")
+#   period:      optional text shown instead of the date, e.g. '2019–present'
+#                or 'Every summer since 2020' (sorting still uses `date`)
+#   title:       course title (required)
+#   role:        your role, e.g. Course coordinator | Teacher | Guest lecturer
+#   level:       e.g. Bachelor | Master | PhD | Postgraduate | Summer school
+#   institution: university or organization
+#   location:    city, country
+#   description: one or two lines (Markdown allowed)
+#   links:       optional list of {name, url}, e.g. Course page, Materials
+#
+# Put a title or description in quotes when it contains ': ' (colon + space).
+# Only .yaml files may be placed in `data/`. Images or PDFs here break the build.
+# ─────────────────────────────────────────────────────────────────────────────
+
+- date: 2026-01-01
+  period: '2026'
+  title: 'Fundamentals of Statistical Modeling'
+  role: Lab teacher
+  level: Master
+  institution: Karolinska Institutet
+  location: Sweden
+  description: 'A five-week course about advanced statistical modeling techniques for estimating cumulative distribution functions. I developed lab exercises and taught these.'
+  links:
+    - name: Course syllabus
+      url: https://education.ki.se/course-and-programme-syllabi/course-syllabus-5BD006
+
+- date: 2026-01-101
+  period: '2026'
+  title: 'Molecular Medicine - Oncology (Biostatistcs Week)'
+  role: Developer, coordinator, and lecturer
+  level: Bachelor
+  institution: Karolinska Institutet
+  location: Sweden
+  description: 'A one-week course for biomedical students about fundamental analysis techniques in biostatics, including multiple regression, logistic regression, and surival analysis.'
+  links:
+    - name: Course syllabus
+      url: https://education.ki.se/course-and-programme-syllabi/course-syllabus-1BI049
+
+- date: 2024-01-01
+  period: '2024'
+  title: 'Modeling the Dynamics of Intensive Longitudinal Data'
+  role: Lab teacher
+  institution: Universiteit Utrecht
+  location: The Netherlands
+
+- date: 2023-01-01
+  period: '2023 - 2025'
+  title: 'Dynamics and Causality in the Social and Behavioural Sciences'
+  level: Master
+  role: Developer, lecturer, and examiner
+  institution: Universiteit Utrecht
+  location: The Netherlands
+  description: 'A ten-week master course about causal inference frameworks and methods. I developed and lectured one week about joint effects and inverse probability weighted estimation or marginal structural models, including an extensive graded assignment.'
+
+- date: 2024-01-01
+  period: '2024'
+  title: 'Introduction to Causal Inference using Observational Data in the Social Sciences'
+  role: Coordinator and lecturer
+  level: Master
+  institution: Humboldt-Universität zu Berlin
+  location: Berlin, Germany
+  description: 'A five-week introduction to modern causal inference: The Rubin Causal Model, directed acyclic graphs, and g-methods such as inverse probability weighting and g-estimation, applied to simulated and real-world data.'
+
+- date: 2018-01-01
+  title: 'Introduction to Structural Equation Modeling using Mplus'
+  period: '2018 - 2025'
+  role: Lecturer and developer
+  level: Postgraduate
+  institution: Utrecht Summer School (Universiteit Utrecht)
+  location: The Netherlands
+  description: 'A five-day course on path models, multiple group models, mediation and moderation, confirmatory factor analysis, and longitudinal models in Mplus, including a consultation day for participants own projects.'
+  links:
+    - name: Summer School page
+      url: https://utrechtsummerschool.nl/courses/data-science/introduction-to-structural-equation-modeling-using-mplus
+    - name: Course website
+      url: https://utrechtuniversity.github.io/S20/
+
+- date: 2018-01-01
+  title: 'Advanced Course on Using Mplus'
+  period: '2018 - 2025'
+  role: Lecturer and developer
+  level: Postgraduate
+  institution: Utrecht Summer School (Universiteit Utrecht)
+  location: The Netherlands
+  description: 'In-depth lectures on SEM fundamentals and advanced longitudinal models: cross-lagged panel models, growth curve models, latent class and growth mixture models, and causal inference in cross-lagged panel research.'
+  links:
+    - name: Summer School page
+      url: https://utrechtsummerschool.nl/courses/data-science/advanced-longitudinal-modeling-in-mplus
+    - name: Course website
+      url: https://utrechtuniversity.github.io/S23/
+
+- date: 2018-01-01
+  title: 'Introduction to Research Methods'
+  period: '2018 - 2025'
+  role: Lab teacher
+  level: Bachelor
+  institution: Universiteit Utrecht
+  location: The Netherlands
+  description: 'First course in statistics for bachelor students, focussed on introducing basic statistical concepts.'
+
+- date: 2018-01-01
+  title: 'Application of Research Methods and Statistics'
+  period: '2018 - 2025'
+  role: Lab teacher
+  level: Bachelor
+  institution: Universiteit Utrecht
+  location: The Netherlands
+  description: 'Second course in statistics for bachelor students, focussed on applying basic statistical concepts to empirical studies.'
+
+- date: 2018-01-01
+  title: 'Advancing Knowledge of Research Methods and Statistics'
+  period: '2018 - 2025'
+  role: Lab teacher
+  level: Bachelor
+  institution: Universiteit Utrecht
+  location: The Netherlands
+  description: 'Third course in statistics for bachelor students, focussed on developing their critical statistical reading skills.'
+
+- date: 2018-01-01
+  title: 'Basics of Research Methods and Statistics'
+  period: '2018 - 2023'
+  role: Lab teacher
+  level: Pre-master
+  institution: Universiteit Utrecht
+  location: The Netherlands
+  description: 'An intensive introductory course about statistics for students who transfrom from a university of applied sciences to an academic master (i.e., a pre-master).'

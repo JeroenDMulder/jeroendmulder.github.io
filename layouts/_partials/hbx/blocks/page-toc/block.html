@@ -1,0 +1,75 @@
+{{/* Custom block: page-toc
+     A small "On this page" table of contents.
+     - Wide screens (≥1280px): fixed on the right side of the window, and the
+       current section is highlighted while scrolling.
+     - Narrower screens: a row of links at the place of the block.
+
+     Usage in a landing page (put it as the first section):
+       - block: page-toc
+         content:
+           title: On this page          # optional
+           items: [Experience, Education, Languages]
+
+     Each item is the exact text of a section title on the page. The script finds
+     that title and gives it an anchor (e.g. #experience), so this works with the
+     theme's blocks without changing them.
+*/}}
+{{ $block := .wcBlock }}
+{{ $content := $block.content }}
+{{ if not (reflect.IsMap $content) }}{{ $content = dict }}{{ end }}
+{{ $title := index $content "title" | default "On this page" }}
+{{ $items := index $content "items" | default slice }}
+{{ $uid := printf "toc-%s" (md5 (printf "%v" $items) | truncate 8 "") }}
+
+{{ if $items }}
+<nav id="{{ $uid }}" aria-label="{{ $title }}"
+     class="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8 xl:fixed xl:right-6 xl:top-32 xl:z-20 xl:w-40 xl:max-w-none xl:px-0">
+  <div class="flex flex-wrap items-center gap-x-4 gap-y-2 xl:flex-col xl:items-start xl:gap-1 xl:border-l xl:border-gray-200 xl:pl-4 dark:xl:border-gray-700">
+    <span class="text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400 xl:mb-2">{{ $title }}</span>
+    {{ range $items }}
+    <a href="#{{ . | anchorize }}" data-label="{{ . }}"
+       class="hb-toc-link text-sm text-gray-600 hover:text-primary-700 aria-[current=true]:font-semibold aria-[current=true]:text-primary-700 dark:text-gray-300 dark:hover:text-primary-300">{{ . }}</a>
+    {{ end }}
+  </div>
+</nav>
+<style>
+  /* Every section is its own layer (`isolate`), so later sections would cover the fixed
+     TOC and swallow clicks. Lift the TOC's section above them, below the menu bar (z-30). */
+  #section-page-toc { position: relative; z-index: 20; }
+</style>
+<script>
+(function () {
+ function init() {
+  var nav = document.getElementById({{ $uid }});
+  if (!nav) return;
+  // Same layering fix as the <style> above, in case the block was given a custom `id`.
+  var sec = nav.closest('section'); if (sec) { sec.style.position = 'relative'; sec.style.zIndex = '20'; }
+  var links = Array.prototype.slice.call(nav.querySelectorAll('.hb-toc-link'));
+  var candidates = Array.prototype.slice.call(document.querySelectorAll('section h1, section h2, section h3, section .text-3xl'));
+  var targets = [];
+  links.forEach(function (a) {
+    var label = a.getAttribute('data-label').trim().toLowerCase();
+    var id = a.getAttribute('href').slice(1);
+    var el = candidates.find(function (c) { return !nav.contains(c) && c.textContent.trim().toLowerCase() === label; });
+    if (!el) return; // title not found: leave the link visible (it just won't jump)
+    if (!document.getElementById(id)) el.id = id;
+    el.style.scrollMarginTop = '6rem'; // keep the title below the sticky menu bar
+    targets.push({ link: a, el: el });
+  });
+  // Highlight the section currently in view.
+  function update() {
+    var current = null;
+    targets.forEach(function (t) { if (t.el.getBoundingClientRect().top < window.innerHeight * 0.35) current = t; });
+    targets.forEach(function (t) { t.link.setAttribute('aria-current', t === current ? 'true' : 'false'); });
+  }
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+  // If the page was opened with e.g. /cv/#education, jump there now that the anchor exists.
+  if (location.hash) { var t = document.getElementById(location.hash.slice(1)); if (t) t.scrollIntoView(); }
+ }
+ // The TOC sits above the sections it links to, so wait until the whole page is parsed.
+ if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+ else init();
+})();
+</script>
+{{ end }}
