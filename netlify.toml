@@ -1,19 +1,26 @@
+# Netlify build settings. jeroendmulder.nl is hosted on Netlify.
+# Based on the HugoBlox academic-cv template.
+# Keep HUGO_VERSION in sync with `build.hugo_version` in hugoblox.yaml.
+
 [build]
-  command = "hugo --gc --minify -b $URL && npx pagefind --source 'public'"
+  command = "pnpm install --no-frozen-lockfile && hugo --gc --minify -b $URL && pnpm run pagefind"
   publish = "public"
 
 [build.environment]
-  HUGO_VERSION = "0.126.3"
+  HUGO_VERSION = "0.162.0"
+  GO_VERSION = "1.21.5"
+  NODE_VERSION = "22"
   HUGO_ENABLEGITINFO = "true"
 
 [context.production.environment]
   HUGO_ENV = "production"
 
+# Pull-request previews (also show future-dated content).
 [context.deploy-preview]
-  command = "hugo --gc --minify --buildFuture -b $DEPLOY_PRIME_URL && npx pagefind --source 'public'"
+  command = "pnpm install --no-frozen-lockfile && hugo --gc --minify --buildFuture -b $DEPLOY_PRIME_URL && pnpm run pagefind"
 
 [context.branch-deploy]
-  command = "hugo --gc --minify -b $DEPLOY_PRIME_URL && npx pagefind --source 'public'"
+  command = "pnpm install --no-frozen-lockfile && hugo --gc --minify -b $DEPLOY_PRIME_URL && pnpm run pagefind"
 
 [[plugins]]
   package = "netlify-plugin-hugo-cache-resources"

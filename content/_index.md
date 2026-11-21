@@ -1,7 +1,7 @@
 ---
 # Leave the homepage title empty to use the site title
 title: ""
-date: 2024-12-24
+date: 2026-11-13
 type: landing
 
 design:
@@ -9,12 +9,28 @@ design:
   spacing: "6rem"
 
 sections:
+  # Introduction: photo, name, role, affiliations, links, bio, interests.
+  # Profile data and introduction text (`bio:`) live in `data/authors/admin.yaml`.
+  # (Setting `content.text` here would REPLACE the bio.)
+  # `show_about_heading` and `show_education` are added by the local override in
+  # `layouts/_partials/hbx/blocks/resume-biography-3/block.html`.
   - block: resume-biography-3
     content:
-      # Choose a user profile to display (a folder name within `content/authors/`)
       username: admin
-      text: ""
+      headings:
+        interests: Interests
+      # The "Download CV" button, experience and education are on the CV page (`content/cv.md`).
     design:
+      show_about_heading: false # hide the "Professional Summary" heading
+      show_education: false # education is shown on the CV page
+      # Section padding [top, right, bottom, left]. Theme default is 6rem top and bottom.
+      spacing:
+        padding: ['1.5rem', '0', '3rem', '0']
+      avatar:
+        size: large
+        shape: circle
+      name:
+        size: md # xs | sm | md | lg | xl
       css_class: dark
       background:
         color: black
@@ -26,38 +42,6 @@ sections:
           size: cover
           position: center
           parallax: false
-  - block: markdown
-    content:
-      title: '📚 My Research'
-      subtitle: ''
-      text: |-
-        Currently, my project concerns the use causal inference techniques (e.g., g-methods, debiased machine learning techniques) for the analysis of longitudinal, observational data in research in psychology and related disciplines. I take an interdisciplinary approach, combining techniques from different modeling traditions and disciplines, and studying how we can best apply them in a social science context.
-
-        I find it important to always keep the end-users of the statistical methods (i.e., applied researchers) in mind. Therefore, I devote considerable time to the readability and comprehensibility of my academic articles; develop user-friendly applications for others to apply analytical techniques; and enjoy presenting about it at conferences and during lectures for bachelor and master students, doctoral candidates, and postdoctoral researchers.
-        
-        If you have questions or suggestions for collaborations (both methodological or more empirical work), or if you are interested in consultation, please do not hesitate to contact me.
-    design:
-      columns: '1'
-  - block: collection
-    id: publications
-    content:
-      title: Featured Publications
-      subtitle: ''
-      filters:
-        folders:
-          - publication
-        featured_only: true
-    design:
-      view: compact
-  - block: collection
-    id: talks
-    content:
-      title: Recent & Upcoming Talks
-      filters:
-        folders:
-          - events
-        featured_only: true
-    design:
-      view: card
-      columns: '2'
+      biography:
+        style: "max-width: 70ch;"
 ---

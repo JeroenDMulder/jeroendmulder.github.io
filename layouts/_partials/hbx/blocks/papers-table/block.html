@@ -1,0 +1,225 @@
+{{/* Custom block: papers-table
+     Renders `data/papers.yaml` as a compact table, newest first.
+     Same look as the talks-table and courses-table blocks.
+
+     Usage in a landing page:
+       - block: papers-table
+         content:
+           title: Papers
+           text: Optional intro (Markdown).
+           topics: [Causal Inference]          # optional: only entries with ANY of these topics
+           exclude_topics: [R packages]        # optional: leave out entries with any of these topics
+           show_topics: true                   # optional: add a "Topics" column with labels
+           filter: true                        # optional: clickable labels + buttons that filter the table
+           column: Paper                       # optional: header of the main column
+           show_table: false                   # optional: only show title and text (e.g. a page intro)
+         (`topic: X` still works as a shorthand for `topics: [X]`.)
+     Topic names are matched without regard to capitals.
+*/}}
+{{ $page := .wcPage }}
+{{ $block := .wcBlock }}
+{{ $content := $block.content }}
+{{ if not (reflect.IsMap $content) }}{{ $content = dict }}{{ end }}
+
+{{/* Read a boolean option with a default */}}
+{{ $show_table := true }}
+{{ if eq (printf "%T" (index $content "show_table")) "bool" }}{{ $show_table = index $content "show_table" }}{{ end }}
+{{ $show_topics := false }}
+{{ if eq (printf "%T" (index $content "show_topics")) "bool" }}{{ $show_topics = index $content "show_topics" }}{{ end }}
+{{ $filter := false }}
+{{ if eq (printf "%T" (index $content "filter")) "bool" }}{{ $filter = index $content "filter" }}{{ end }}
+
+{{/* Lower-cased include / exclude lists */}}
+{{ $include := slice }}
+{{ with index $content "topic" }}{{ $include = $include | append (lower (printf "%v" .)) }}{{ end }}
+{{ range index $content "topics" }}{{ $include = $include | append (lower (printf "%v" .)) }}{{ end }}
+{{ $exclude := slice }}
+{{ range index $content "exclude_topics" }}{{ $exclude = $exclude | append (lower (printf "%v" .)) }}{{ end }}
+
+{{ $papers := slice }}
+{{ with hugo.Data.papers }}{{ $papers = . }}{{ end }}
+
+{{ $filtered := slice }}
+{{ range $papers }}
+  {{ $mine := slice }}
+  {{ range .topics }}{{ $mine = $mine | append (lower (printf "%v" .)) }}{{ end }}
+  {{ $keep := true }}
+  {{ if $include }}{{ $keep = gt (len (intersect $mine $include)) 0 }}{{ end }}
+  {{ if and $keep $exclude }}{{ $keep = eq (len (intersect $mine $exclude)) 0 }}{{ end }}
+  {{ if $keep }}{{ $filtered = $filtered | append . }}{{ end }}
+{{ end }}
+
+{{/* Sort newest first (dates as YYYY-MM-DD sort correctly as text) */}}
+{{ $rows := slice }}
+{{ range $filtered }}
+  {{ $rows = $rows | append (merge . (dict "sort_key" (printf "%v" .date))) }}
+{{ end }}
+{{ $rows = sort $rows "sort_key" "desc" }}
+
+{{/* Topics present in this table (first spelling wins), each with a colour */}}
+{{ $palette := slice
+  "bg-sky-100 text-sky-800 dark:bg-sky-900/50 dark:text-sky-200"
+  "bg-amber-100 text-amber-800 dark:bg-amber-900/50 dark:text-amber-200"
+  "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/50 dark:text-emerald-200"
+  "bg-violet-100 text-violet-800 dark:bg-violet-900/50 dark:text-violet-200"
+  "bg-rose-100 text-rose-800 dark:bg-rose-900/50 dark:text-rose-200"
+  "bg-teal-100 text-teal-800 dark:bg-teal-900/50 dark:text-teal-200"
+}}
+{{ $topic_keys := slice }}
+{{ $topic_names := dict }}
+{{ range $rows }}{{ range .topics }}
+  {{ $k := lower (printf "%v" .) }}
+  {{ if not (in $topic_keys $k) }}
+    {{ $topic_keys = $topic_keys | append $k }}
+    {{ $topic_names = merge $topic_names (dict $k (printf "%v" .)) }}
+  {{ end }}
+{{ end }}{{ end }}
+{{ $topic_keys = sort $topic_keys }}
+{{ $topic_class := dict }}
+{{ range $i, $k := $topic_keys }}
+  {{ $topic_class = merge $topic_class (dict $k (index $palette (mod $i (len $palette)))) }}
+{{ end }}
+
+{{/* Name to show in bold in author lists: the site owner's display name */}}
+{{ $me := "" }}
+{{ with hugo.Data.authors }}{{ range . }}{{ if .is_owner }}{{ with .name }}{{ $me = .display }}{{ end }}{{ end }}{{ end }}{{ end }}
+
+{{ $button := "rounded-full border border-gray-300 px-2.5 py-0.5 text-xs font-medium text-gray-700 hover:border-primary-500 hover:text-primary-700 dark:border-gray-600 dark:text-gray-300 dark:hover:text-primary-300" }}
+{{ $uid := printf "papers-%s" (md5 (printf "%v|%v|%v" (index $content "title") $include $exclude) | truncate 8 "") }}
+
+<div class="mx-auto w-full max-w-5xl px-4 sm:px-6" id="{{ $uid }}">
+  {{ with index $content "title" }}
+  <h2 class="mb-4 text-3xl font-bold text-gray-900 dark:text-white">{{ printf "%v" . | emojify | $page.RenderString }}</h2>
+  {{ end }}
+  {{ with index $content "text" }}
+  <div class="prose prose-slate dark:prose-invert mb-8 max-w-none">{{ printf "%v" . | emojify | $page.RenderString | safeHTML }}</div>
+  {{ end }}
+
+  {{ if not $show_table }}
+  {{ else if $rows }}
+
+  {{ if and $filter $topic_keys }}
+  {{/* Filter bar: "All" plus one button per topic */}}
+  <div class="mb-4 flex flex-wrap items-center gap-2" role="toolbar" aria-label="Filter by topic">
+    <span class="mr-1 text-sm text-gray-600 dark:text-gray-400">Filter:</span>
+    <button type="button" data-topic="" aria-pressed="true" class="hb-topic-filter rounded-full border border-gray-300 bg-white px-3 py-1 text-xs font-medium text-gray-700 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300">All</button>
+    {{ range $topic_keys }}
+    <button type="button" data-topic="{{ . }}" aria-pressed="false" class="hb-topic-filter rounded-full px-3 py-1 text-xs font-medium {{ index $topic_class . }}">{{ index $topic_names . }}</button>
+    {{ end }}
+    <span class="hb-topic-count ml-1 text-xs text-gray-500 dark:text-gray-400" aria-live="polite"></span>
+  </div>
+  {{ end }}
+
+  <div class="overflow-x-auto rounded-lg border border-gray-200 dark:border-gray-700">
+    <table class="w-full min-w-[40rem] text-left text-sm">
+      <thead class="bg-gray-50 text-xs uppercase tracking-wide text-gray-600 dark:bg-gray-800 dark:text-gray-300">
+        <tr>
+          <th scope="col" class="px-4 py-3 font-semibold">Year</th>
+          <th scope="col" class="px-4 py-3 font-semibold">{{ index $content "column" | default "Paper" }}</th>
+          {{ if $show_topics }}<th scope="col" class="px-4 py-3 font-semibold">Topics</th>{{ end }}
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+        {{ range $rows }}
+        {{ $keys := slice }}
+        {{ range .topics }}{{ $keys = $keys | append (lower (printf "%v" .)) }}{{ end }}
+        <tr class="align-top hover:bg-gray-50 dark:hover:bg-gray-800/50" data-topics="{{ delimit $keys "|" }}">
+          <td class="whitespace-nowrap px-4 py-4 text-gray-600 dark:text-gray-400">
+            {{ with .date }}{{ (time.AsTime .) | time.Format "2006" }}{{ end }}
+          </td>
+          <td class="px-4 py-4">
+            <div class="font-semibold text-gray-900 dark:text-white">{{ .title | $page.RenderString }}</div>
+
+            {{ with .authors }}
+            <div class="mt-1 text-gray-700 dark:text-gray-300">
+              {{- range $i, $a := . -}}
+                {{- if $i }}, {{ end -}}
+                {{- if eq (printf "%v" $a) $me -}}<span class="font-semibold">{{ $a }}</span>{{- else -}}{{ $a }}{{- end -}}
+              {{- end -}}
+            </div>
+            {{ end }}
+
+            {{ $volume := .volume }}
+            {{ $issue := .issue }}
+            {{ with .journal }}
+            <div class="text-gray-600 dark:text-gray-400">
+              <em>{{ . }}</em>{{ with $volume }}, <em>{{ . }}</em>{{ end }}{{ with $issue }}({{ . }}){{ end }}
+            </div>
+            {{ end }}
+
+            {{ with .description }}
+            <div class="mt-2 text-gray-600 dark:text-gray-400">{{ . | $page.RenderString }}</div>
+            {{ end }}
+
+            <div class="mt-2 flex flex-wrap items-center gap-2">
+              {{ with .doi }}
+              <a href="https://doi.org/{{ . }}" target="_blank" rel="noopener" class="{{ $button }}">DOI</a>
+              {{ end }}
+              {{ range .links }}
+              <a href="{{ .url }}" target="_blank" rel="noopener" class="{{ $button }}">{{ .name }}</a>
+              {{ end }}
+            </div>
+          </td>
+          {{ if $show_topics }}
+          <td class="px-4 py-4">
+            <div class="flex flex-col items-start gap-1.5">
+              {{ range .topics }}
+              {{ $k := lower (printf "%v" .) }}
+              {{ if $filter }}
+              <button type="button" data-topic="{{ $k }}" title="Show only {{ . }}" class="hb-topic-label whitespace-nowrap rounded-full px-2.5 py-0.5 text-xs font-medium hover:underline {{ index $topic_class $k }}">{{ . }}</button>
+              {{ else }}
+              <span class="whitespace-nowrap rounded-full px-2.5 py-0.5 text-xs font-medium {{ index $topic_class $k }}">{{ . }}</span>
+              {{ end }}
+              {{ end }}
+            </div>
+          </td>
+          {{ end }}
+        </tr>
+        {{ end }}
+      </tbody>
+    </table>
+  </div>
+
+  {{ if $filter }}
+  <style>
+    #{{ $uid | safeCSS }} .hb-topic-filter { cursor: pointer; transition: box-shadow .15s, opacity .15s; }
+    #{{ $uid | safeCSS }} .hb-topic-filter[aria-pressed="false"] { opacity: .7; }
+    #{{ $uid | safeCSS }} .hb-topic-filter[aria-pressed="true"] { opacity: 1; box-shadow: 0 0 0 2px currentColor; }
+    #{{ $uid | safeCSS }} .hb-topic-label { cursor: pointer; }
+  </style>
+  <script>
+  (function () {
+    var root = document.getElementById({{ $uid }});
+    if (!root) return;
+    var rows = root.querySelectorAll('tbody tr');
+    var buttons = root.querySelectorAll('.hb-topic-filter');
+    var count = root.querySelector('.hb-topic-count');
+    function apply(topic) {
+      var shown = 0;
+      rows.forEach(function (r) {
+        var match = !topic || r.getAttribute('data-topics').split('|').indexOf(topic) !== -1;
+        r.hidden = !match;
+        if (match) shown++;
+      });
+      buttons.forEach(function (b) {
+        b.setAttribute('aria-pressed', b.getAttribute('data-topic') === topic ? 'true' : 'false');
+      });
+      if (count) count.textContent = topic ? shown + ' of ' + rows.length : '';
+    }
+    root.addEventListener('click', function (e) {
+      var el = e.target.closest('.hb-topic-filter, .hb-topic-label');
+      if (!el || !root.contains(el)) return;
+      var topic = el.getAttribute('data-topic');
+      // Clicking the active topic again shows everything.
+      var active = root.querySelector('.hb-topic-filter[aria-pressed="true"]');
+      if (el.classList.contains('hb-topic-label') && active && active.getAttribute('data-topic') === topic) topic = '';
+      apply(topic);
+    });
+  })();
+  </script>
+  {{ end }}
+
+  {{ else }}
+  <p class="text-gray-600 dark:text-gray-400">No papers yet.</p>
+  {{ end }}
+</div>
